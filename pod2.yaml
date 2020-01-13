@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod2
+spec:
+  schedulerName: PAVA
+  containers:
+  - name: redis
+    image: redis
+    imagePullPolicy: IfNotPresent
+    resources:
+        limits:
+                cpu: "1"
+        requests:
+                cpu: 500m
+  priorityClassName: medium-priority
